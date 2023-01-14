@@ -1,5 +1,5 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/storage";
 
@@ -12,4 +12,6 @@ const firebaseConfig = {
   appId: "1:927517033002:web:4d4ca03b08269f581f3953",
 };
 
-export default firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
+export const authService = getAuth(app);
